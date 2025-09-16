@@ -16,7 +16,7 @@ inject = "2.0.1"
 jaxbApi = "4.0.0"
 jaxbRuntime = "4.0.2"
 jsonbApi = "3.0.0"
-jsonbRuntime = "3.0.2"
+jsonbRuntime = "3.0.4"
 
 # testLibs
 assertj = "3.22.0"
