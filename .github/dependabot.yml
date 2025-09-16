@@ -4,6 +4,23 @@ updates:
     directory: "/"
     schedule:
       interval: monthly
+    groups:
+      workflow-actions:
+        patterns:
+          - "*"
     allow:
       - dependency-name: "actions/*"
       - dependency-name: "redhat-actions/*"
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+    open-pull-requests-limit: 20
+    groups:
+      gradle-plugins:
+        patterns:
+          - "com.diffplug.spotless*"
+          - "com.dorongold.task-tree*"
+          - "org.checkerframework*"
+          - "com.gradle.develocity*"
