@@ -5,7 +5,7 @@ classmate = "1.5.1"
 jackson = "2.14.1"
 jandex = "3.3.0"
 jbossLogging = "3.5.0.Final"
-jbossLoggingTool = "2.2.1.Final"
+jbossLoggingTool = "3.0.4.Final"
 
 # jdks
 jdks-baseline = "17"
