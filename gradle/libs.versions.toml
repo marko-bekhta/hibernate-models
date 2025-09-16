@@ -20,7 +20,7 @@ jsonbRuntime = "3.0.2"
 
 # testLibs
 assertj = "3.22.0"
-h2 = "2.2.224"
+h2 = "2.3.232"
 junit5 = "5.11.0"
 log4j = "2.17.1"
 
