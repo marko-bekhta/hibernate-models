@@ -15,7 +15,7 @@ permissions:
 jobs:
   publish-build-scans:
     name: Publish Sonar scan
-    if: github.repository == 'hibernate/hibernate-models' && github.event.workflow_run.conclusion != 'cancelled'
+    if: github.repository == 'marko-bekhta/hibernate-models' && github.event.workflow_run.conclusion != 'cancelled'
     runs-on: ubuntu-latest
     steps:
       - name: Determine the Branch Reference for which the original action was triggered
