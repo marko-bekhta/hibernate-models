@@ -462,7 +462,7 @@ public interface ClassDetails extends AnnotationTarget, TypeVariableScope, Stora
 		for ( int i = 0; i < members.length; i++ ) {
 			javaMembers[i] = members[i].toJavaMember();
 		}
-		return getModelContext().getAccessorFactory().multiValueReader( javaMembers );
+		return getModelContext().getAccessorFactory().multiValueReader( toJavaClass(), javaMembers );
 	}
 
 	/**
@@ -481,7 +481,7 @@ public interface ClassDetails extends AnnotationTarget, TypeVariableScope, Stora
 		for ( int i = 0; i < members.length; i++ ) {
 			javaMembers[i] = members[i].toJavaMember();
 		}
-		return getModelContext().getAccessorFactory().multiValueWriter( javaMembers );
+		return getModelContext().getAccessorFactory().multiValueWriter( toJavaClass(), javaMembers );
 	}
 
 	/**
