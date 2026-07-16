@@ -27,7 +27,7 @@ final class HibernateAccessorAsmBulkAccessorClassGenerator implements Opcodes {
 				"java/lang/Object", new String[]{BULK_ACCESSOR_INTERNAL});
 
 		generateConstructor(cw);
-		generateReadByField(cw, generatedName, targetInternal, fields);
+		generateReadByField(cw, targetInternal, fields);
 		generateWriteByField(cw, targetInternal, fields);
 		generateReadByMethod(cw, targetInternal, isInterface, methods);
 		generateWriteByMethod(cw, targetInternal, isInterface, methods);
@@ -49,8 +49,7 @@ final class HibernateAccessorAsmBulkAccessorClassGenerator implements Opcodes {
 
 	// readByField(Object instance, int index) -> Object
 	// locals: [this=0, instance=1, index=2]
-	private static void generateReadByField(ClassWriter cw, String generatedName,
-											String targetInternal, Field[] fields) {
+	private static void generateReadByField(ClassWriter cw, String targetInternal, Field[] fields) {
 		MethodVisitor mv = cw.visitMethod(ACC_PUBLIC, "readByField",
 				"(Ljava/lang/Object;I)Ljava/lang/Object;", null, null);
 		mv.visitCode();
