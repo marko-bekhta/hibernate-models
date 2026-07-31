@@ -183,11 +183,6 @@ public record MissingPackageInfoDetails(String packageName, String packageInfoCl
 	}
 
 	@Override
-	public ModelsContext getModelContext() {
-		return null;
-	}
-
-	@Override
 	public List<FieldDetails> getFields() {
 		return List.of();
 	}

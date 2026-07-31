@@ -5,7 +5,6 @@ plugins {
 description = "A de-typed abstraction over reflection and annotations"
 
 dependencies {
-	api project( ":hibernate-models-accessor" )
 	testImplementation project( ":hibernate-models-testing" )
 }
 

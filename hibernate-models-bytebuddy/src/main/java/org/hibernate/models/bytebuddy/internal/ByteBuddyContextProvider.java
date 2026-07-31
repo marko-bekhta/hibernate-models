@@ -6,7 +6,6 @@ package org.hibernate.models.bytebuddy.internal;
 
 import java.util.Map;
 
-import org.hibernate.models.accessor.HibernateAccessorFactory;
 import org.hibernate.models.bytebuddy.Settings;
 import org.hibernate.models.internal.BasicModelsContextImpl;
 import org.hibernate.models.spi.ClassLoading;
@@ -26,17 +25,16 @@ public class ByteBuddyContextProvider implements ModelsContextProvider {
 	@Override
 	public ModelsContext produceContext(
 			ClassLoading classLoading,
-			HibernateAccessorFactory accessorFactory,
 			RegistryPrimer registryPrimer,
 			Map<Object, Object> configProperties) {
 		final TypePool typePool = resolveTypePool( configProperties );
 		final boolean trackImplementors = ModelsConfiguration.shouldTrackImplementors( configProperties );
 
 		if ( typePool != null ) {
-			return new ByteBuddyModelsContextImpl( typePool, trackImplementors, classLoading, registryPrimer, accessorFactory );
+			return new ByteBuddyModelsContextImpl( typePool, trackImplementors, classLoading, registryPrimer );
 		}
 
-		return new BasicModelsContextImpl( classLoading, accessorFactory, trackImplementors, registryPrimer );
+		return new BasicModelsContextImpl( classLoading, trackImplementors, registryPrimer );
 	}
 
 	private TypePool resolveTypePool(Map<Object, Object> configProperties) {

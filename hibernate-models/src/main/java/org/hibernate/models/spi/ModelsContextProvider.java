@@ -6,7 +6,6 @@ package org.hibernate.models.spi;
 
 import java.util.Map;
 
-import org.hibernate.models.accessor.HibernateAccessorFactory;
 import org.hibernate.models.internal.BasicModelsContextImpl;
 
 /**
@@ -24,9 +23,5 @@ public interface ModelsContextProvider {
 	 *
 	 * @return The alternate context, or null.
 	 */
-	ModelsContext produceContext(
-			ClassLoading classLoading,
-			HibernateAccessorFactory accessorFactory,
-			RegistryPrimer registryPrimer,
-			Map<Object,Object> configProperties);
+	ModelsContext produceContext(ClassLoading classLoading, RegistryPrimer registryPrimer, Map<Object,Object> configProperties);
 }
